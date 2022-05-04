@@ -10,27 +10,22 @@ import classes from "./BookmarkRow.module.css";
 const BookmarkRow = () => {
   const currentUser = useSelector((state) => state.user.user);
 
-  const [movies, setMovies] = useState([]);
-
   const [bookmarks, setBookmarks] = useState([]);
 
   useEffect(
     () =>
-      onSnapshot(collection(db, "movies"), (snapshot) =>
-        setMovies(snapshot.docs)
+      onSnapshot(
+        collection(db, "bookmark", currentUser.uid, "item"),
+        (snapshot) => setBookmarks(snapshot.docs)
       ),
     [db]
   );
-
-  useEffect(() => {
-    setBookmarks(movies?.filter((movie) => movie.data().isBookmarked === true));
-  }, [movies]);
 
   return (
     <div className={classes.bookmark}>
       <h2>Bookmarks</h2>
 
-      {/* {movies.length > 0 ? (
+      {bookmarks.length > 0 ? (
         <List>
           {bookmarks.map((item) => (
             <RowItem
@@ -48,7 +43,7 @@ const BookmarkRow = () => {
         </List>
       ) : (
         <Spinner />
-      )} */}
+      )}
     </div>
   );
 };

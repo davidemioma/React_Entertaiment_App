@@ -9,14 +9,23 @@ import {
 } from "@firebase/firestore";
 import classes from "./BookmarkBtn.module.css";
 
-const BookmarkBtn = ({ id, uid, username }) => {
+const BookmarkBtn = ({
+  id,
+  uid,
+  username,
+  regular,
+  year,
+  category,
+  rating,
+  title,
+}) => {
   const [bookmarks, setBookmarks] = useState([]);
 
   const [hasBookmarked, setHasBookmarked] = useState(false);
 
   useEffect(
     () =>
-      onSnapshot(collection(db, "movies", id, "bookmark"), (snapshot) =>
+      onSnapshot(collection(db, "bookmark", uid, "item"), (snapshot) =>
         setBookmarks(snapshot.docs)
       ),
     [db, id]
@@ -25,17 +34,22 @@ const BookmarkBtn = ({ id, uid, username }) => {
   useEffect(
     () =>
       setHasBookmarked(
-        bookmarks.findIndex((bookmark) => bookmark.id === uid) !== -1
+        bookmarks.findIndex((bookmark) => bookmark.id === id) !== -1
       ),
     [bookmarks]
   );
 
   const bookmarkMovie = async () => {
     if (hasBookmarked) {
-      await deleteDoc(doc(db, "movies", id, "bookmark", uid));
+      await deleteDoc(doc(db, "bookmark", uid, "item", id));
     } else {
-      await setDoc(doc(db, "movies", id, "bookmark", uid), {
+      await setDoc(doc(db, "bookmark", uid, "item", id), {
         username,
+        regular,
+        year,
+        category,
+        rating,
+        title,
       });
     }
   };

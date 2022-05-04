@@ -17,7 +17,16 @@ const RowItem = ({
       <div className={classes.image}>
         <img className={classes.bg_img} src={regular} alt="" />
 
-        <BookmarkBtn id={id} uid={uid} username={username} />
+        <BookmarkBtn
+          id={id}
+          uid={uid}
+          username={username}
+          regular={regular}
+          year={year}
+          category={category}
+          rating={rating}
+          title={title}
+        />
       </div>
 
       <div className={classes.content}>

@@ -46,6 +46,11 @@ const TrendingRow = () => {
                 id={movie.id}
                 uid={currentUser.uid}
                 username={currentUser.username}
+                regular={movie.data().regular}
+                year={movie.data().year}
+                category={movie.data().category}
+                rating={movie.data().rating}
+                title={movie.data().title}
               />
 
               <div className={classes.content}>
