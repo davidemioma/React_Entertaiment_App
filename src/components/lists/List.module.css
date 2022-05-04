@@ -1,0 +1,17 @@
+.lists {
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 650px) {
+  .lists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .lists {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

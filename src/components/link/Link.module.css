@@ -1,0 +1,4 @@
+a img:hover,
+.active img {
+  filter: brightness(0) invert(1);
+}

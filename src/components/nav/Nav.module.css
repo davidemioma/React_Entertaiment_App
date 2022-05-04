@@ -1,0 +1,54 @@
+.container {
+  margin: 1.5rem 0;
+  background: #161d2f;
+  border-radius: 10px;
+}
+
+.icons,
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.nav img {
+  cursor: pointer;
+}
+
+.icons {
+  gap: 1.6rem;
+}
+
+.avatar {
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .icons {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    height: 92vh;
+    width: 70px;
+  }
+
+  .nav {
+    height: 100%;
+  }
+
+  .nav,
+  .icons {
+    flex-direction: column;
+  }
+}

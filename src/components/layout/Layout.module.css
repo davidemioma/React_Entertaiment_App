@@ -1,0 +1,16 @@
+@media screen and (min-width: 1024px) {
+  .layout {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .children {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .children::-webkit-scrollbar {
+    display: none;
+  }
+}

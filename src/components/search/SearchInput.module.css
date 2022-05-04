@@ -1,0 +1,27 @@
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.search input {
+  font-size: 1.3rem;
+  background: none;
+  outline: none;
+  color: #fff;
+  padding: 1rem 0;
+  border: none;
+  flex-grow: 1;
+}
+
+.search input:focus {
+  border-bottom: 0.5px solid #ccccff;
+}
+
+@media screen and (min-width: 1024px) {
+  .search {
+    margin-top: 2rem;
+  }
+}
