@@ -25,25 +25,21 @@ const BookmarkRow = () => {
     <div className={classes.bookmark}>
       <h2>Bookmarks</h2>
 
-      {bookmarks.length > 0 ? (
-        <List>
-          {bookmarks.map((item) => (
-            <RowItem
-              key={item.id}
-              id={item.id}
-              uid={currentUser.uid}
-              username={currentUser.username}
-              regular={item.data().regular}
-              year={item.data().year}
-              category={item.data().category}
-              rating={item.data().rating}
-              title={item.data().title}
-            />
-          ))}
-        </List>
-      ) : (
-        <Spinner />
-      )}
+      <List>
+        {bookmarks.map((item) => (
+          <RowItem
+            key={item.id}
+            id={item.id}
+            uid={currentUser.uid}
+            username={currentUser.username}
+            regular={item.data().regular}
+            year={item.data().year}
+            category={item.data().category}
+            rating={item.data().rating}
+            title={item.data().title}
+          />
+        ))}
+      </List>
     </div>
   );
 };
