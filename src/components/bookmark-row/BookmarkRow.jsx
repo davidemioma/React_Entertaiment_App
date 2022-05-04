@@ -4,7 +4,6 @@ import { db } from "../../firebase";
 import { collection, onSnapshot } from "@firebase/firestore";
 import List from "../lists/List";
 import RowItem from "../row-item/RowItem";
-import Spinner from "../spinner/Spinner";
 import classes from "./BookmarkRow.module.css";
 
 const BookmarkRow = () => {
