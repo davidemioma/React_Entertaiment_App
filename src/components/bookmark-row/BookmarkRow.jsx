@@ -30,7 +30,7 @@ const BookmarkRow = () => {
     <div className={classes.bookmark}>
       <h2>Bookmarks</h2>
 
-      {movies.length > 0 ? (
+      {/* {movies.length > 0 ? (
         <List>
           {bookmarks.map((item) => (
             <RowItem
@@ -48,7 +48,7 @@ const BookmarkRow = () => {
         </List>
       ) : (
         <Spinner />
-      )}
+      )} */}
     </div>
   );
 };

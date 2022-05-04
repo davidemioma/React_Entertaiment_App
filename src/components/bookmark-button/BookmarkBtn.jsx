@@ -6,7 +6,6 @@ import {
   doc,
   onSnapshot,
   setDoc,
-  updateDoc,
 } from "@firebase/firestore";
 import classes from "./BookmarkBtn.module.css";
 
@@ -34,17 +33,9 @@ const BookmarkBtn = ({ id, uid, username }) => {
   const bookmarkMovie = async () => {
     if (hasBookmarked) {
       await deleteDoc(doc(db, "movies", id, "bookmark", uid));
-
-      await updateDoc(doc(db, "movies", id), {
-        isBookmarked: false,
-      });
     } else {
       await setDoc(doc(db, "movies", id, "bookmark", uid), {
         username,
-      });
-
-      await updateDoc(doc(db, "movies", id), {
-        isBookmarked: true,
       });
     }
   };
